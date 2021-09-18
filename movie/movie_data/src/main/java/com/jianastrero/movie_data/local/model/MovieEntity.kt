@@ -3,7 +3,7 @@ package com.jianastrero.movie_data.local.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.jianastrero.movie_domain.Movie
+import com.jianastrero.movie_domain.model.Movie
 
 /**
  * Local Database Entity Class for Movies

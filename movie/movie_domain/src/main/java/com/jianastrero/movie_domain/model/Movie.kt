@@ -1,4 +1,4 @@
-package com.jianastrero.movie_domain
+package com.jianastrero.movie_domain.model
 
 data class Movie(
     val artwork: String,
