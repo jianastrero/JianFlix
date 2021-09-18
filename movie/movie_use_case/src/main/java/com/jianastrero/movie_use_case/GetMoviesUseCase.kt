@@ -28,7 +28,7 @@ class GetMoviesUseCase : KoinComponent{
         } catch (e: IOException) {
             emit(Resource.Error.NoInternetConnectionError())
         } catch (e: Exception) {
-            emit(Resource.Error.UnexpectedError())
+            emit(Resource.Error(e.localizedMessage ?: "Unexpected error occurred"))
         }
     }
 }
