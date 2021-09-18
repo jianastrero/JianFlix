@@ -6,6 +6,11 @@ import com.jianastrero.movie_data.remote.ITunesApi
 import com.jianastrero.movie_domain.MovieRepository
 import org.koin.dsl.module
 
+/**
+ * Movie Module Instance for dependency injection
+ *
+ * @author Jian James P. Astrero
+ */
 var movieModule = module {
 
     fun provideMovieRepository(
