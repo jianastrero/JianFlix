@@ -1,7 +1,7 @@
 package com.jianastrero.movie_data.remote.model
 
 import com.google.gson.annotations.SerializedName
-import com.jianastrero.movie_data.local.Movie
+import com.jianastrero.movie_data.local.model.Movie
 
 data class MovieDto(
     @SerializedName("artistId")

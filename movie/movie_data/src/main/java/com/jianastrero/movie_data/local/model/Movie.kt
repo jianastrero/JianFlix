@@ -1,4 +1,4 @@
-package com.jianastrero.movie_data.local
+package com.jianastrero.movie_data.local.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
