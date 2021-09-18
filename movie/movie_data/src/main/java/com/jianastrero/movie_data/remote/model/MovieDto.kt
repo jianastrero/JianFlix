@@ -1,6 +1,7 @@
 package com.jianastrero.movie_data.remote.model
 
 import com.google.gson.annotations.SerializedName
+import com.jianastrero.core.util.toLocalDateTime
 import com.jianastrero.movie_data.local.model.MovieEntity
 
 /**
@@ -113,6 +114,6 @@ fun MovieDto.toMovie() = MovieEntity(
     name = trackName,
     price = trackPrice,
     preview = previewUrl,
-    releaseDate = releaseDate,
+    releaseDate = releaseDate.toLocalDateTime(),
     timeInMillis = trackTimeMillis.toLong()
 )

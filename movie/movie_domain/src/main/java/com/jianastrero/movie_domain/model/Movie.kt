@@ -1,5 +1,7 @@
 package com.jianastrero.movie_domain.model
 
+import java.time.LocalDateTime
+
 /**
  * Movie domain entity
  *
@@ -14,7 +16,7 @@ data class Movie(
     val name: String,
     val price: Float,
     val preview: String,
-    val releaseDate: String,
+    val releaseDate: LocalDateTime,
     val timeInMillis: Long,
     var viewed: Boolean
 )

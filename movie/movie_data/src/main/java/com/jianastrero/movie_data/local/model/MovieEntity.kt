@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.jianastrero.movie_domain.model.Movie
+import java.time.LocalDateTime
 
 /**
  * Local Database Entity Class for Movies
@@ -22,7 +23,7 @@ data class MovieEntity(
     val price: Float,
     val preview: String,
     @ColumnInfo(name = "release_date")
-    val releaseDate: String,
+    val releaseDate: LocalDateTime,
     @ColumnInfo(name = "time_in_millis")
     val timeInMillis: Long,
     var viewed: Boolean = false
