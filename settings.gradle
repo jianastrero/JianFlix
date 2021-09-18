@@ -10,3 +10,4 @@ rootProject.name = "JianFlix"
 include ':app'
 include ':core'
 include ':movie'
+include ':movie:movie_domain'
