@@ -8,7 +8,7 @@ sealed class Resource<T>(
     class Loading<T> : Resource<T>()
     class Success<T>(data: T) : Resource<T>(data)
 
-    sealed class Error<T>(message: String) : Resource<T>(message = message) {
+    open class Error<T>(message: String) : Resource<T>(message = message) {
 
         class NoInternetConnectionError<T> : Error<T>("Cannot connect to server's. Please check your internet connection.")
         class UnexpectedError<T> : Error<T>("An Unexpected error occurred, please try again later.")
