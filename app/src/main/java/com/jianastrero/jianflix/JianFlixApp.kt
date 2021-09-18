@@ -2,7 +2,10 @@ package com.jianastrero.jianflix
 
 import android.app.Application
 import com.jianastrero.core.util.Logger
+import com.jianastrero.di.movieModule
 import com.jianastrero.jianflix.di.appModule
+import com.jianastrero.jianflix.di.databaseModule
+import com.jianastrero.jianflix.di.networkModule
 import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -20,7 +23,12 @@ class JianFlixApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@JianFlixApp)
-            modules(appModule)
+            modules(
+                appModule,
+                databaseModule,
+                networkModule,
+                movieModule
+            )
         }
 
         // Initialize Logger
