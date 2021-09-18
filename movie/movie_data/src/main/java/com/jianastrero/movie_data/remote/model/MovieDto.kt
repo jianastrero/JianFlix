@@ -1,6 +1,7 @@
 package com.jianastrero.movie_data.remote.model
 
 import com.google.gson.annotations.SerializedName
+import com.jianastrero.movie_data.local.Movie
 
 data class MovieDto(
     @SerializedName("artistId")
@@ -91,4 +92,17 @@ data class MovieDto(
     val trackViewUrl: String,
     @SerializedName("wrapperType")
     val wrapperType: String
+)
+
+fun MovieDto.toMovie() = Movie(
+    artwork = artworkUrl100,
+    currency = currency,
+    description = longDescription,
+    genre = primaryGenreName,
+    id = trackId,
+    name = trackName,
+    price = trackPrice,
+    preview = previewUrl,
+    releaseDate = releaseDate,
+    timeInMillis = trackTimeMillis.toLong()
 )
