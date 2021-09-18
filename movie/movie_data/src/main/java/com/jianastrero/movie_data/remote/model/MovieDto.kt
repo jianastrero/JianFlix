@@ -26,13 +26,13 @@ data class MovieDto(
     @SerializedName("collectionExplicitness")
     val collectionExplicitness: String,
     @SerializedName("collectionHdPrice")
-    val collectionHdPrice: Double,
+    val collectionHdPrice: Float,
     @SerializedName("collectionId")
     val collectionId: Int,
     @SerializedName("collectionName")
     val collectionName: String,
     @SerializedName("collectionPrice")
-    val collectionPrice: Double,
+    val collectionPrice: Float,
     @SerializedName("collectionViewUrl")
     val collectionViewUrl: String,
     @SerializedName("contentAdvisoryRating")
@@ -72,9 +72,9 @@ data class MovieDto(
     @SerializedName("trackExplicitness")
     val trackExplicitness: String,
     @SerializedName("trackHdPrice")
-    val trackHdPrice: Double,
+    val trackHdPrice: Float,
     @SerializedName("trackHdRentalPrice")
-    val trackHdRentalPrice: Double,
+    val trackHdRentalPrice: Float,
     @SerializedName("trackId")
     val trackId: Int,
     @SerializedName("trackName")
@@ -82,9 +82,9 @@ data class MovieDto(
     @SerializedName("trackNumber")
     val trackNumber: Int,
     @SerializedName("trackPrice")
-    val trackPrice: Double,
+    val trackPrice: Float,
     @SerializedName("trackRentalPrice")
-    val trackRentalPrice: Double,
+    val trackRentalPrice: Float,
     @SerializedName("trackTimeMillis")
     val trackTimeMillis: Int,
     @SerializedName("trackViewUrl")
