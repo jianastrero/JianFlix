@@ -99,6 +99,11 @@ data class MovieDto(
     val wrapperType: String
 )
 
+/**
+ * Convert a MovieDto into a Movie Instance
+ *
+ * @author Jian James P. Astrero
+ */
 fun MovieDto.toMovie() = Movie(
     artwork = artworkUrl100,
     currency = currency,
