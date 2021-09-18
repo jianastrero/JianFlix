@@ -4,6 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * Local Database Entity Class for Movies
+ *
+ * @author Jian James P. Astrero
+ */
 @Entity(tableName = "movies")
 data class Movie(
     val artwork: String,
