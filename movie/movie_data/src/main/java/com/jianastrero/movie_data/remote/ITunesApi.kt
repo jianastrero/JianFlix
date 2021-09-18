@@ -4,8 +4,16 @@ import android.app.appsearch.SearchResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MovieApi {
+/**
+ * API Interface for iTunes
+ *
+ * @author Jian James P. Astrero
+ */
+interface ITunesApi {
 
+    /**
+     * Search using the iTunes API
+     */
     @GET("search")
     suspend fun search(
         @Query("term") term: String,
