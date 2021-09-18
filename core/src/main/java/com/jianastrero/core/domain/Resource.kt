@@ -5,12 +5,14 @@ sealed class Resource<T>(
     val message: String? = null
 ) {
 
-    object Loading : Resource<Nothing>()
+    class Loading<T> : Resource<T>()
     class Success<T>(data: T) : Resource<T>(data)
 
-    sealed class Error(message: String) : Resource<Nothing>(message = message) {
-        object NoInternetConnectionError : Error("Cannot connect to server's. Please check your internet connection.")
-        object UnexpectedError : Error("An Unexpected error occurred, please try again later.")
+    sealed class Error<T>(message: String) : Resource<T>(message = message) {
+
+        class NoInternetConnectionError<T> : Error<T>("Cannot connect to server's. Please check your internet connection.")
+        class UnexpectedError<T> : Error<T>("An Unexpected error occurred, please try again later.")
+
     }
 
 }
