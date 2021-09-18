@@ -11,10 +11,18 @@ import retrofit2.HttpException
 import java.io.IOException
 import java.lang.Exception
 
+/**
+ * Use-case for Getting movies
+ *
+ * @author Jian James P. Astrero
+ */
 class GetMoviesUseCase : KoinComponent{
 
     private val repository by inject<MovieRepository>()
 
+    /**
+     * Invokable - object could invoke itself to call this method
+     */
     operator fun invoke(): Flow<Resource<List<Movie>>> = flow {
         try {
             emit(Resource.Loading())
