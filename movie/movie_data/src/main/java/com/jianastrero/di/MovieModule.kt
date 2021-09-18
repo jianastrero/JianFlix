@@ -11,7 +11,7 @@ import org.koin.dsl.module
  *
  * @author Jian James P. Astrero
  */
-var movieModule = module {
+val movieModule = module {
 
     fun provideMovieRepository(
         iTunesApi: ITunesApi,
