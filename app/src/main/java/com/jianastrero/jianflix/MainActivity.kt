@@ -8,6 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.jianastrero.core.util.log
 import com.jianastrero.jianflix.ui.theme.JianFlixTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,6 +22,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        "Hello world!".log()
     }
 }
 
