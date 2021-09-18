@@ -61,8 +61,25 @@ dependencies {
     // Import Core
     implementation project(':core')
 
+    // Import Movie Domain
+    implementation project(':movie:movie_domain')
+
+    // Import Movie Data
+    implementation project(':movie:movie_data')
+
     // Import Koin
     implementation "io.insert-koin:koin-android:$koin_version"
+
+    // Import Room
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // Import Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Import OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
 
     testImplementation 'junit:junit:4.+'
 

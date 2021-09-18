@@ -40,8 +40,11 @@ dependencies {
     // Import Core
     implementation project(':core')
 
-    // Import Core
+    // Import Movie Domain
     implementation project(':movie:movie_domain')
+
+    // Import Koin
+    implementation "io.insert-koin:koin-android:$koin_version"
 
     // Import GSON
     implementation "com.google.code.gson:gson:$gson_version"
