@@ -100,7 +100,7 @@ data class MovieDto(
 )
 
 /**
- * Convert a MovieDto into a Movie Instance
+ * Convert a MovieDto into a MovieEntity Instance
  *
  * @author Jian James P. Astrero
  */

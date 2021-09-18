@@ -3,6 +3,7 @@ package com.jianastrero.movie_data.local.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.jianastrero.movie_domain.Movie
 
 /**
  * Local Database Entity Class for Movies
@@ -25,4 +26,23 @@ data class MovieEntity(
     @ColumnInfo(name = "time_in_millis")
     val timeInMillis: Long,
     var viewed: Boolean = false
+)
+
+/**
+ * Convert a MovieEntity into a Movie Instance
+ *
+ * @author Jian James P. Astrero
+ */
+fun MovieEntity.toMovie() = Movie(
+    artwork = artwork,
+    currency = currency,
+    description = description,
+    genre = genre,
+    id = id,
+    name = name,
+    price = price,
+    preview = preview,
+    releaseDate = releaseDate,
+    timeInMillis = timeInMillis,
+    viewed = viewed
 )
