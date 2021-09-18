@@ -3,6 +3,11 @@ package com.jianastrero.movie_data.remote.model
 import com.google.gson.annotations.SerializedName
 import com.jianastrero.movie_data.local.model.Movie
 
+/**
+ * Data Transfer Object received from API call
+ *
+ * @author Jian James P. Astrero
+ */
 data class MovieDto(
     @SerializedName("artistId")
     val artistId: Int,
