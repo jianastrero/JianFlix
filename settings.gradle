@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "JianFlix"
 include ':app'
 include ':core'
+include ':movie'
