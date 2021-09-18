@@ -25,18 +25,18 @@ class GetMovieUseCase : KoinComponent{
      */
     operator fun invoke(id: Int): Flow<Resource<Movie>> = flow {
         try {
-            emit(Resource.Loading())
+            emit(Resource.Loading<Movie>())
 
             val movie = repository.getById(id)
 
             emit(Resource.Success(movie))
 
         } catch (e: HttpException) {
-            emit(Resource.Error.UnexpectedError())
+            emit(Resource.Error.UnexpectedError<Movie>())
         } catch (e: IOException) {
-            emit(Resource.Error.NoInternetConnectionError())
+            emit(Resource.Error.NoInternetConnectionError<Movie>())
         } catch (e: Exception) {
-            emit(Resource.Error(e.localizedMessage ?: "Unexpected error occurred"))
+            emit(Resource.Error<Movie>(e.localizedMessage ?: "Unexpected error occurred"))
         }
     }
 }
