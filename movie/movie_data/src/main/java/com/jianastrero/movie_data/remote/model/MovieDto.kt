@@ -1,7 +1,7 @@
 package com.jianastrero.movie_data.remote.model
 
 import com.google.gson.annotations.SerializedName
-import com.jianastrero.movie_data.local.model.Movie
+import com.jianastrero.movie_data.local.model.MovieEntity
 
 /**
  * Data Transfer Object received from API call
@@ -104,7 +104,7 @@ data class MovieDto(
  *
  * @author Jian James P. Astrero
  */
-fun MovieDto.toMovie() = Movie(
+fun MovieDto.toMovie() = MovieEntity(
     artwork = artworkUrl100,
     currency = currency,
     description = longDescription,

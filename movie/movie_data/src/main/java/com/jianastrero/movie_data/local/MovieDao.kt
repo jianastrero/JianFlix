@@ -3,7 +3,7 @@ package com.jianastrero.movie_data.local
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.jianastrero.movie_data.local.model.Movie
+import com.jianastrero.movie_data.local.model.MovieEntity
 
 /**
  * Local Database Transactions for Movies
@@ -19,7 +19,7 @@ interface MovieDao {
      * @author Jian James P. Astrero
      */
     @Query("SELECT * FROM movies")
-    suspend fun getAll(): List<Movie>
+    suspend fun getAll(): List<MovieEntity>
 
     /**
      * Get a Movie using its id
@@ -29,17 +29,17 @@ interface MovieDao {
      * @author Jian James P. Astrero
      */
     @Query("SELECT * FROM movies WHERE id = :id LIMIT 1")
-    suspend fun getById(id: Int): Movie
+    suspend fun getById(id: Int): MovieEntity
 
     /**
      * Insert List of Movies
      *
-     * @param movies List of Movies to insert to local database
+     * @param movieEntities List of Movies to insert to local database
      *
      * @author Jian James P. Astrero
      */
     @Insert
-    suspend fun insertAll(movies: List<Movie>)
+    suspend fun insertAll(movieEntities: List<MovieEntity>)
 
     /**
      * Delete all Movies

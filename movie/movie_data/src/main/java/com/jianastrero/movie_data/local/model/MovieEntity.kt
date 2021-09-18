@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
  * @author Jian James P. Astrero
  */
 @Entity(tableName = "movies")
-data class Movie(
+data class MovieEntity(
     val artwork: String,
     val currency: String,
     val description: String,
@@ -23,5 +23,6 @@ data class Movie(
     @ColumnInfo(name = "release_date")
     val releaseDate: String,
     @ColumnInfo(name = "time_in_millis")
-    val timeInMillis: Long
+    val timeInMillis: Long,
+    var viewed: Boolean = false
 )
