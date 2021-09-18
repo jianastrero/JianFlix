@@ -1,6 +1,6 @@
 package com.jianastrero.movie_data.remote
 
-import android.app.appsearch.SearchResult
+import com.jianastrero.movie_data.remote.model.SearchResultDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -20,6 +20,6 @@ interface ITunesApi {
         @Query("country") country: String,
         @Query("media") media: String,
         @Query("all") all: String
-    ): SearchResult
+    ): SearchResultDto
 
 }
