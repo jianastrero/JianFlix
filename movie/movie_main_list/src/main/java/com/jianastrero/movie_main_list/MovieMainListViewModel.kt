@@ -11,6 +11,14 @@ import com.jianastrero.movie_use_case.GetMoviesCategorizedByGenreUseCase
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
+/**
+ * The ViewModel for the MovieMainList Composable
+ *
+ * @param getLatestMovieUseCase The use case to get latest movie.
+ * @param getMoviesCategorizedByGenreUseCase The use case to get movies categorized by genre.
+ *
+ * @author Jian James P. Astrero
+ */
 class MovieMainListViewModel(
     private val getLatestMovieUseCase: GetLatestMovieUseCase,
     private val getMoviesCategorizedByGenreUseCase: GetMoviesCategorizedByGenreUseCase

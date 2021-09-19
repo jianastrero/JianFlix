@@ -2,6 +2,11 @@ package com.jianastrero.movie_domain
 
 import com.jianastrero.movie_domain.model.Movie
 
+/**
+ * Movie Repository Contract
+ *
+ * @author Jian James P. Astrero
+ */
 interface MovieRepository {
 
     /**
