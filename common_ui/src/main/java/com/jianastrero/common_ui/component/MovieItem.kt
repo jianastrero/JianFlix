@@ -1,8 +1,7 @@
-package com.jianastrero.common_ui
+package com.jianastrero.common_ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -79,6 +78,7 @@ fun MovieItem(
             fontSize = 12.sp,
             modifier = Modifier
                 .fillMaxWidth()
+                .height(((12 + 4) * 3).dp) // 12 - text size, 4 - line spacing, 3 - line count
         )
     }
 }
