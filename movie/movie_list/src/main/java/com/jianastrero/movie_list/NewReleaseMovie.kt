@@ -8,14 +8,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.*
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.jianastrero.common_ui.GradientLetterBox
 import com.jianastrero.core.util.iTunesArtworkUrlResize
+import com.jianastrero.jianflix.ui.theme.Magenta500
+import com.jianastrero.jianflix.ui.theme.PrimaryDark
 import com.jianastrero.movie_domain.model.Movie
-import com.jianastrero.movie_list.ui.Magenta500
-import com.jianastrero.movie_list.ui.PrimaryDark
 
 @ExperimentalCoilApi
 @Composable
@@ -63,7 +64,8 @@ fun NewReleaseMovie(
             Text(
                 text = movie.name,
                 color = Color.White,
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                fontWeight = FontWeight.ExtraBold
             )
             Text(
                 text = "New on JianFlix",
