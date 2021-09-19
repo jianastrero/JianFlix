@@ -8,6 +8,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Composable to show a Gradient Letterbox on its content
+ *
+ * @param color The color of the letterbox.
+ * @param contentAlignment The alignment of the content inside the letterbox.
+ * @param height The height of the letterbox.
+ * @param modifier Modifiers for the Composable.
+ * @param content Content of the letterbox.
+ *
+ * @author Jian James P. Astrero
+ */
 @Composable
 fun GradientLetterBox(
     color: Color,
