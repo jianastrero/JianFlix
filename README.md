@@ -1,11 +1,13 @@
 # JianFlix
 A Coding Challenge Submission
 ___
-## Architecture
-### Clean Architecture
+
+### Architecture
+Clean Architecture
 [Read more at Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 ---
-## Libraries Used
+
+### Libraries Used
 | Type                 | Library                  | Link                                                         |
 |----------------------|--------------------------|--------------------------------------------------------------|
 | Dependency Injection | Koin                     | https://insert-koin.io/                                      |
@@ -13,6 +15,7 @@ ___
 | Data Persistence     | Room Persistence Library | https://developer.android.com/jetpack/androidx/releases/room |
 | Rest API Client      | Retrofit                 | https://square.github.io/retrofit/                           |
 ---
+
 ## Struggles:
 - architecture
  - hard to settle on a single structure
