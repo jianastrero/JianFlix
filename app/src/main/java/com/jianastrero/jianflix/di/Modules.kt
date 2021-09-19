@@ -8,9 +8,11 @@ import com.jianastrero.jianflix.BuildConfig
 import com.jianastrero.jianflix.JianFlixDatabase
 import com.jianastrero.movie_data.local.MovieDao
 import com.jianastrero.movie_data.remote.ITunesApi
+import com.jianastrero.movie_main_list.MovieMainListViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -87,4 +89,13 @@ val networkModule = module {
 
     single { provideITunesApi(get()) }
 
+}
+
+/**
+ * ViewModel Module Instance for dependency injection
+ *
+ * @author Jian James P. Astrero
+ */
+val viewModelModules = module {
+    viewModel { MovieMainListViewModel(get()) }
 }
