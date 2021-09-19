@@ -60,7 +60,7 @@ dependencies {
     implementation project(':movie:movie_domain')
 
     // Import Koil
-    implementation "io.coil-kt:coil-compose:$koil_version"
+    implementation "io.coil-kt:coil-compose:$coil_version"
 
     // Import Koin
     implementation "io.insert-koin:koin-android:$koin_version"
