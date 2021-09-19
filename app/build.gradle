@@ -74,6 +74,9 @@ dependencies {
     // Import Movie Use Case
     implementation project(':movie:movie_use_case')
 
+    // Import Movie List
+    implementation project(':movie:movie_list')
+
     // Import Koin
     implementation "io.insert-koin:koin-android:$koin_version"
 
