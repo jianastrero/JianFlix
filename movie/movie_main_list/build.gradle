@@ -62,6 +62,9 @@ dependencies {
     // Import Movie Domain
     implementation project(':movie:movie_domain')
 
+    // Import Movie Use Cases
+    implementation project(':movie:movie_use_case')
+
     // Import Koil
     implementation "io.coil-kt:coil-compose:$koil_version"
 
