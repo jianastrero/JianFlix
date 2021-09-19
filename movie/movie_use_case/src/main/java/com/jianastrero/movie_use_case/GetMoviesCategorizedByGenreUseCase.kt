@@ -28,12 +28,12 @@ class GetMoviesCategorizedByGenreUseCase : KoinComponent {
             emit(Resource.Loading<Map<String, List<Movie>>>())
 
             val movies = repository.getAll()
-            val genreList = movies.distinctBy { it.genre }.map { it.genre }
+            val genreList = movies.distinctBy { it.genre }.map { it.genre }.sorted()
 
             val genreMap = mutableMapOf<String, List<Movie>>()
 
             genreList.forEach { genre ->
-                val genreMovies = movies.filter { it.genre == genre }
+                val genreMovies = movies.filter { it.genre == genre }.sortedByDescending { it.releaseDate }
                 genreMap[genre] = genreMovies
             }
 
