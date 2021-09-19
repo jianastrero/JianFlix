@@ -97,6 +97,11 @@ private val list = listOf(
     )
 )
 
+/**
+ * Main Movie List or basically, Home
+ *
+ * @author Jian James P. Astrero
+ */
 @ExperimentalCoilApi
 @Composable
 fun MovieMainList() {
