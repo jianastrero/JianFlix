@@ -18,7 +18,7 @@ Clean Architecture<br />
 - [cinema_mobile_app.jpg by Tomas Skarba](https://www.pinterest.ph/pin/292452569544436426/)
 
 ## API endpoint
-[iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching)
+[iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching) <br />
 specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all](https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all)
 
 ## Struggles:
