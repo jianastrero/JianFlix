@@ -1,11 +1,9 @@
 # JianFlix
 A Coding Challenge Submission
-___
 
 ### Architecture
 Clean Architecture
 Read more at [Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
----
 
 ### Libraries Used
 | Type                 | Library                  | Link                                                         |
@@ -14,7 +12,6 @@ Read more at [Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13
 | Image Loading        | Coil                     | https://github.com/coil-kt/coil                              |
 | Data Persistence     | Room Persistence Library | https://developer.android.com/jetpack/androidx/releases/room |
 | Rest API Client      | Retrofit                 | https://square.github.io/retrofit/                           |
----
 
 ## Struggles:
 - architecture
