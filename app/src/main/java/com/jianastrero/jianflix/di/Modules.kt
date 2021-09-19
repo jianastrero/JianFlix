@@ -97,5 +97,5 @@ val networkModule = module {
  * @author Jian James P. Astrero
  */
 val viewModelModules = module {
-    viewModel { MovieMainListViewModel(get()) }
+    viewModel { MovieMainListViewModel(get(), get()) }
 }
