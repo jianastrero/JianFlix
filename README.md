@@ -1,11 +1,11 @@
 # JianFlix
 A Coding Challenge Submission
 
-### Architecture
+## Architecture
 Clean Architecture
 Read more at [Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
-### Libraries Used
+## Libraries Used
 | Type                 | Library                  | Link                                                         |
 |----------------------|--------------------------|--------------------------------------------------------------|
 | Dependency Injection | Koin                     | https://insert-koin.io/                                      |
