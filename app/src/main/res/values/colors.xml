@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="light_purple">#FF590668</color>
-    <color name="purple">#FF36054B</color>
-    <color name="dark_purple">#FF200641</color>
+    <color name="primary_light">#FF000000</color>
+    <color name="primary">#FF000000</color>
+    <color name="primary_dark">#FF000000</color>
     <color name="magenta_500">#FFE91E63</color>
     <color name="magenta_700">#C2185B</color>
     <color name="black">#FF000000</color>

@@ -1,4 +1,4 @@
-package com.jianastrero.jianflix.ui.theme
+package com.jianastrero.movie_list.ui
 
 import androidx.compose.ui.graphics.Color
 import com.jianastrero.core.ui.PrimaryDarkHex
