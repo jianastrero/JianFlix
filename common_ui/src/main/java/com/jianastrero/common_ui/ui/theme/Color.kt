@@ -1,4 +1,4 @@
-package com.jianastrero.jianflix.ui.theme
+package com.jianastrero.common_ui.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

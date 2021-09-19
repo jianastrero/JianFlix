@@ -15,7 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import com.jianastrero.common_ui.component.MovieItem
-import com.jianastrero.jianflix.ui.theme.PrimaryDark
+import com.jianastrero.common_ui.ui.theme.PrimaryDark
+import com.jianastrero.movie_main_list.component.NewReleaseMovie
 import org.koin.androidx.compose.get
 
 /**

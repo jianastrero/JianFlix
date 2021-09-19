@@ -1,4 +1,4 @@
-package com.jianastrero.jianflix.ui.theme
+package com.jianastrero.common_ui.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.core.util.toCurrency
-import com.jianastrero.jianflix.ui.theme.Magenta500
+import com.jianastrero.common_ui.ui.theme.Magenta500
 import com.jianastrero.movie_domain.model.Movie
 
 /**

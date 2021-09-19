@@ -1,4 +1,4 @@
-package com.jianastrero.common_ui
+package com.jianastrero.common_ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
