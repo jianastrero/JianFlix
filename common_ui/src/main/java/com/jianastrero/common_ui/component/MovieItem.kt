@@ -33,8 +33,8 @@ import com.jianastrero.movie_domain.model.Movie
 @Composable
 fun MovieItem(
     movie: Movie,
+    onClick: (Movie) -> Unit,
     modifier: Modifier = Modifier,
-    onClick: (Movie) -> Unit
 ) {
     Column(
         modifier = modifier
