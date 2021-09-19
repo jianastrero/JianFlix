@@ -13,21 +13,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
+import com.jianastrero.common_ui.Screen
 import com.jianastrero.common_ui.component.MovieItem
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
+import com.jianastrero.core.util.log
 import com.jianastrero.movie_main_list.component.NewReleaseMovie
 import org.koin.androidx.compose.get
 
 /**
  * Main Movie List or basically, Home
  *
+ * @param navController The Navigation Controller for switching screens
+ *
  * @author Jian James P. Astrero
  */
 @ExperimentalCoilApi
 @Composable
-fun MovieMainList() {
-
+fun MovieMainList(
+    navController: NavController
+) {
     val viewModel = get<MovieMainListViewModel>()
 
     LazyColumn(
@@ -63,7 +69,13 @@ fun MovieMainList() {
                         Spacer(modifier = Modifier.width(6.dp))
                     }
                     MovieItem(
-                        movie = item
+                        movie = item,
+                        onClick = { movie ->
+                            "movie clicked: ${movie.name}".log()
+                            navController.navigate(
+                                Screen.MovieDetailScreen.route + "/${movie.id}"
+                            )
+                        }
                     )
                     if (index == movies.size - 1) {
                         Spacer(modifier = Modifier.width(8.dp))
