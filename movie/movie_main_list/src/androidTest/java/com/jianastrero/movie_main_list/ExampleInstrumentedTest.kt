@@ -1,4 +1,4 @@
-package com.jianastrero.movie_list
+package com.jianastrero.movie_main_list
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.jianastrero.movie_list
+package com.jianastrero.movie_main_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -99,7 +99,7 @@ private val list = listOf(
 
 @ExperimentalCoilApi
 @Composable
-fun MovieList() {
+fun MovieMainList() {
     Column(
         modifier = Modifier
             .fillMaxWidth()

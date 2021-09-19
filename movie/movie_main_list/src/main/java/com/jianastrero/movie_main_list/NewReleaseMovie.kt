@@ -1,4 +1,4 @@
-package com.jianastrero.movie_list
+package com.jianastrero.movie_main_list
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
