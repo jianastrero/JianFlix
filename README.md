@@ -2,8 +2,8 @@
 A Coding Challenge Submission
 
 ## Architecture
-Clean Architecture
-Read more at [Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+Clean Architecture<br />
+[Read more at Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ## Libraries Used
 | Type                 | Library                  | Link                                                         |
