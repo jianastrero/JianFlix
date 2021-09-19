@@ -2,6 +2,7 @@ package com.jianastrero.common_ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -32,12 +33,16 @@ import com.jianastrero.movie_domain.model.Movie
 @Composable
 fun MovieItem(
     movie: Movie,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: (Movie) -> Unit
 ) {
     Column(
         modifier = modifier
             .width(120.dp)
             .padding(horizontal = 4.dp)
+            .clickable {
+                onClick(movie)
+            }
     ) {
         Box(
             contentAlignment = Alignment.BottomCenter,
