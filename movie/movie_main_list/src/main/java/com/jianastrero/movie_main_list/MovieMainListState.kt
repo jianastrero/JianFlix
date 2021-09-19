@@ -5,5 +5,6 @@ import com.jianastrero.movie_domain.model.Movie
 
 data class MovieMainListState(
     val progressState: ProgressState = ProgressState.None,
-    val moviesCategorizedByGenre: Map<String, List<Movie>> = mapOf()
+    val moviesCategorizedByGenre: Map<String, List<Movie>> = mapOf(),
+    val latestMovie: Movie? = null
 )
