@@ -22,6 +22,14 @@ import com.jianastrero.core.util.toCurrency
 import com.jianastrero.jianflix.ui.theme.Magenta500
 import com.jianastrero.movie_domain.model.Movie
 
+/**
+ * Composable ui for a movie item
+ *
+ * @param movie The movie item to show in this composable.
+ * @param modifier Modifiers for this composable.
+ *
+ * @author Jian James P. Astrero
+ */
 @Composable
 fun MovieItem(
     movie: Movie,
