@@ -14,8 +14,8 @@ Clean Architecture<br />
 | Rest API Client      | Retrofit                 | https://square.github.io/retrofit/                           |
 
 ## UI Inspiration
-[Artstation - Mobile Application Concept](https://www.pinterest.ph/pin/644155552948637809/)
-[cinema_mobile_app.jpg by Tomas Skarba](https://www.pinterest.ph/pin/292452569544436426/)
+- [Artstation - Mobile Application Concept](https://www.pinterest.ph/pin/644155552948637809/)
+- [cinema_mobile_app.jpg by Tomas Skarba](https://www.pinterest.ph/pin/292452569544436426/)
 
 ## Struggles:
 - architecture
