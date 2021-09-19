@@ -17,6 +17,10 @@ Clean Architecture<br />
 - [Artstation - Mobile Application Concept](https://www.pinterest.ph/pin/644155552948637809/)
 - [cinema_mobile_app.jpg by Tomas Skarba](https://www.pinterest.ph/pin/292452569544436426/)
 
+## API endpoint
+[iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching)
+specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all](https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all)
+
 ## Struggles:
 - architecture
     - hard to settle on a single structure
