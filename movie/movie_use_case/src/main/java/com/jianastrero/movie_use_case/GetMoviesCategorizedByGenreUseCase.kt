@@ -12,7 +12,7 @@ import java.io.IOException
 import java.lang.Exception
 
 /**
- * Use-case for Getting a single movie
+ * Use-case for Getting movie list categorized by genre
  *
  * @author Jian James P. Astrero
  */
