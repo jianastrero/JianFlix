@@ -23,7 +23,7 @@ class GetMoviesCategorizedByGenreUseCase : KoinComponent {
     /**
      * Invokable - object could invoke itself to call this method
      */
-    operator fun invoke(id: Int): Flow<Resource<Map<String, List<Movie>>>> = flow {
+    operator fun invoke(): Flow<Resource<Map<String, List<Movie>>>> = flow {
         try {
             emit(Resource.Loading<Map<String, List<Movie>>>())
 
