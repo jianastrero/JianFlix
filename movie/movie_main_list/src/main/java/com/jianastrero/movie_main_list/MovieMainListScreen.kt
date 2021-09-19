@@ -31,7 +31,7 @@ import org.koin.androidx.compose.get
  */
 @ExperimentalCoilApi
 @Composable
-fun MovieMainList(
+fun MovieMainListScreen(
     navController: NavController
 ) {
     val viewModel = get<MovieMainListViewModel>()
