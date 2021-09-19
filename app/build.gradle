@@ -65,6 +65,9 @@ dependencies {
     // Import Constant
     implementation project(':constant')
 
+    // Import Constant
+    implementation project(':common_ui')
+
     // Import Movie Domain
     implementation project(':movie:movie_domain')
 
