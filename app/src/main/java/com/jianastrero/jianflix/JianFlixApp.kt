@@ -6,6 +6,7 @@ import com.jianastrero.di.movieModule
 import com.jianastrero.jianflix.di.appModule
 import com.jianastrero.jianflix.di.databaseModule
 import com.jianastrero.jianflix.di.networkModule
+import com.jianastrero.jianflix.di.viewModelModules
 import com.jianastrero.movie_use_case.di.movieUseCaseModule
 import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
@@ -29,7 +30,8 @@ class JianFlixApp : Application() {
                 databaseModule,
                 networkModule,
                 movieModule,
-                movieUseCaseModule
+                movieUseCaseModule,
+                viewModelModules
             )
         }
 
