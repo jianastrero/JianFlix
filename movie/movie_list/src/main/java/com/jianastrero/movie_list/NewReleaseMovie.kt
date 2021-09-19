@@ -8,18 +8,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
-import androidx.compose.ui.unit.IntSize
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.*
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.jianastrero.common_ui.GradientLetterBox
 import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.movie_domain.model.Movie
+import com.jianastrero.movie_list.ui.Magenta500
 import com.jianastrero.movie_list.ui.PrimaryDark
 
 @ExperimentalCoilApi
 @Composable
-fun TrendingMovie(
+fun NewReleaseMovie(
     movie: Movie
 ) {
     var size by remember { mutableStateOf(IntSize.Zero) }
@@ -55,9 +55,20 @@ fun TrendingMovie(
                 painter = painter,
             )
         }
-        Text(
-            text = movie.name,
-            color = Color.White
-        )
+        Column(
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = movie.name,
+                color = Color.White,
+                fontSize = 20.sp
+            )
+            Text(
+                text = "New on JianFlix",
+                color = Magenta500
+            )
+        }
     }
 }
