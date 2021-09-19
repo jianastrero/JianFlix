@@ -18,6 +18,13 @@ import com.jianastrero.jianflix.ui.theme.Magenta500
 import com.jianastrero.jianflix.ui.theme.PrimaryDark
 import com.jianastrero.movie_domain.model.Movie
 
+/**
+ * Composable ui to show new release movie
+ *
+ * @param movie The movie to show in the NewReleaseMovie composable.
+ *
+ * @author Jian James P. Astrero
+ */
 @ExperimentalCoilApi
 @Composable
 fun NewReleaseMovie(
