@@ -16,6 +16,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
 
+/**
+ * Simple Error Page
+ *
+ * @param message The message to show in the error page
+ *
+ * @author Jian James P. Astrero
+ */
 @Composable
 fun ErrorPage(message: String) {
     Column(
