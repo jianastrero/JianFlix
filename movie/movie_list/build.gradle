@@ -56,6 +56,9 @@ dependencies {
     // Import Core
     implementation project(':core')
 
+    // Import Core
+    implementation project(':common_ui')
+
     // Import Movie Domain
     implementation project(':movie:movie_domain')
 
