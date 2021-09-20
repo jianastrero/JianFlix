@@ -1,9 +1,9 @@
 # JianFlix
 A Coding Challenge Submission
 
-## Timeline - 41 hours, 35 minutes
+## Timeline - 41 hours, 57 minutes
 Started on *9/18/2021 at 10:58 PM* <br />
-Ended on *9/20/2021 at 4:33 PM*
+Ended on *9/20/2021 at 4:55 PM*
 
 ## Architecture
 Clean Architecture<br />
