@@ -2,6 +2,7 @@ package com.jianastrero.core.util
 
 import java.time.LocalDateTime
 import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 /**
  * Convert String to LocalDateTime
@@ -25,3 +26,13 @@ fun Long.toReadableHoursMinutesAndSeconds(): String {
     val h = seconds / (60 * 60) % 24
     return String.format("%d hours, %02d minutes %02d seconds", h, m, s)
 }
+
+private val readableMonthDayYearFormatter: DateTimeFormatter by lazy {
+    DateTimeFormatter.ofPattern("MMMM d, yyyy")
+}
+/**
+ * Convert LocalDateTime to Readable Month Day, Year
+ *
+ * @author Jian James P. Astrero
+ */
+fun LocalDateTime.toReadableMonthDayYear(): String = readableMonthDayYearFormatter.format(this)
