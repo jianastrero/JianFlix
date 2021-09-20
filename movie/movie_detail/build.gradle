@@ -59,6 +59,9 @@ dependencies {
     // Import Core
     implementation project(':core')
 
+    // Import Core
+    implementation project(':constant')
+
     // Import Common UI
     implementation project(':common_ui')
 
