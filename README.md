@@ -35,11 +35,11 @@ specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;medi
     4. Create Domain for Movie
          - TODO
     5. Create Data for Movie
-      - TODO
+        - TODO
     6. Create Use-Cases for Movie
-      - TODO
+        - TODO
     7. Create Movie Main List Screen
-      - TODO
+        - TODO
 
 ## Struggles:
 - General
