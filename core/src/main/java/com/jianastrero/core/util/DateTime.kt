@@ -13,6 +13,11 @@ fun String.toLocalDateTime(): LocalDateTime =
     ZonedDateTime.parse(replace("Z$".toRegex(), "+00:00"))
         .toLocalDateTime()
 
+/**
+ * Convert milliseconds to Readable Hours, Minutes and Seconds
+ *
+ * @author Jian James P. Astrero
+ */
 fun Long.toReadableHoursMinutesAndSeconds(): String {
     val seconds = this / 1000
     val s = seconds % 60
