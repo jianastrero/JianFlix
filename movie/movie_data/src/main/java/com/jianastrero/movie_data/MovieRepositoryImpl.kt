@@ -24,7 +24,7 @@ class MovieRepositoryImpl(
     private val movieDao: MovieDao
 ) : MovieRepository {
 
-    private var lastFetch = System.currentTimeMillis()
+    private var lastFetch = 0L
 
     /**
      * Get All Movie Domains
@@ -32,26 +32,7 @@ class MovieRepositoryImpl(
      * @author Jian James P. Astrero
      */
     override suspend fun getAll(): List<Movie> {
-
-        if (System.currentTimeMillis() - lastFetch > CACHE_TIMEOUT) {
-            // Fetch Data From API
-            val movieEntities = iTunesApi
-                .search("star", "au", "movie", "") // Fetch from API
-                .movies // Access MovieDto's
-                .map { it.toMovie() } // Map MovieDto's to MovieEntities
-
-            // Keep "viewed" value of the model
-            val cachedMovies = movieDao.getAll()
-            movieEntities.forEach { movieEntity ->
-                val cachedMovie = cachedMovies.firstOrNull { it.id == movieEntity.id }
-                movieEntity.viewed = cachedMovie?.viewed ?: false
-            }
-
-            movieDao.clear() // Clear Local Table of Movies
-            movieDao.insertAll(movieEntities) // Insert new data of Movies
-
-            lastFetch = System.currentTimeMillis()
-        }
+        updateLocal()
 
         return movieDao
             .getAll() // Get all MovieEntities from Local Database
@@ -78,7 +59,16 @@ class MovieRepositoryImpl(
     }
 
     override suspend fun getMoviesByGenre(genre: String): List<Movie> {
+        updateLocal()
 
+        return movieDao
+            .getAll() // Get all MovieEntities from Local Database
+            .mapNotNull {
+                if (it.genre == genre) it.toMovie() else null
+            } // Map MovieEntities to Movie Domains
+    }
+
+    private suspend fun updateLocal() {
         if (System.currentTimeMillis() - lastFetch > CACHE_TIMEOUT) {
             // Fetch Data From API
             val movieEntities = iTunesApi
@@ -98,13 +88,6 @@ class MovieRepositoryImpl(
 
             lastFetch = System.currentTimeMillis()
         }
-
-        return movieDao
-            .getAll() // Get all MovieEntities from Local Database
-            .mapNotNull {
-                if (it.genre == genre) it.toMovie() else null
-            } // Map MovieEntities to Movie Domains
     }
-
 
 }
