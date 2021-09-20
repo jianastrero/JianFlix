@@ -6,8 +6,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -16,8 +18,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import com.jianastrero.common_ui.Screen
+import com.jianastrero.common_ui.component.ErrorPage
 import com.jianastrero.common_ui.component.MovieItem
+import com.jianastrero.common_ui.ui.theme.Magenta500
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
+import com.jianastrero.core.domain.ProgressState
 import com.jianastrero.core.util.log
 import com.jianastrero.movie_main_list.component.NewReleaseMovie
 import org.koin.androidx.compose.get
@@ -36,6 +41,39 @@ fun MovieMainListScreen(
 ) {
     val viewModel = get<MovieMainListViewModel>()
 
+    viewModel.state.value.progressState.let { progressState ->
+        when (progressState) {
+            is ProgressState.Error -> {
+                ErrorPage(message = progressState.message)
+            }
+            ProgressState.Loaded -> {
+                MovieMainListLoadedScreen(navController = navController, viewModel = viewModel)
+            }
+            ProgressState.Loading -> {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                ) {
+                    CircularProgressIndicator(color = Magenta500)
+                    Text(
+                        text = "Fetching movies for JianFlix...",
+                        color = Color.White
+                    )
+                }
+            }
+        }
+    }
+}
+
+@ExperimentalCoilApi
+@Composable
+fun MovieMainListLoadedScreen(
+    navController: NavController,
+    viewModel: MovieMainListViewModel
+) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()

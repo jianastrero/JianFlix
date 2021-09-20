@@ -13,7 +13,7 @@ import com.jianastrero.movie_domain.model.Movie
  * @author Jian James P. Astrero
  */
 data class MovieMainListState(
-    val progressState: ProgressState = ProgressState.None,
+    val progressState: ProgressState = ProgressState.Loading,
     val moviesCategorizedByGenre: Map<String, List<Movie>> = mapOf(),
     val latestMovie: Movie? = null
 )

@@ -8,13 +8,6 @@ package com.jianastrero.core.domain
 sealed class ProgressState {
 
     /**
-     * Progress State's initial state
-     *
-     * @author Jian James P. Astrero
-     */
-    object None : ProgressState()
-
-    /**
      * Progress State is loading
      *
      * @author Jian James P. Astrero

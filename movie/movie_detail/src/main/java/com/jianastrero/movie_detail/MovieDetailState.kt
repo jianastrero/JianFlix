@@ -13,6 +13,6 @@ import com.jianastrero.movie_domain.model.Movie
  * @author Jian James P. Astrero
  */
 data class MovieDetailState(
-    val progressState: ProgressState = ProgressState.None,
+    val progressState: ProgressState = ProgressState.Loading,
     val movie: Movie? = null
 )
