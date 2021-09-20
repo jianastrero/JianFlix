@@ -22,6 +22,20 @@ Clean Architecture<br />
 [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching) <br />
 specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all](https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all)
 
+## Steps Done in development
+1. Design Architecture
+  - TODO
+2. Backend Development
+    1. Create Logging
+         - TODO
+    2. Implement Dependency Injection Starting Point
+         - TODO
+    3. Define What Module I needed - Movie
+         - TODO
+    4. Create Domain for Movie
+         - TODO
+    5. 
+
 ## Struggles:
 - General
     - Importing missing libraries that other libraries require
