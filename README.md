@@ -1,6 +1,10 @@
 # JianFlix
 A Coding Challenge Submission
 
+## Timeline
+Started at 16e9ebe7 on 9/18/2021 at 10:58 PM
+Ended at -
+
 ## Architecture
 Clean Architecture<br />
 [Read more at Uncle Bob's blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
