@@ -17,8 +17,8 @@ import kotlinx.coroutines.flow.onEach
 /**
  * The ViewModel for the MovieMainList Composable
  *
- * @param getLatestMovieUseCase The use case to get latest movie.
- * @param getMoviesCategorizedByGenreUseCase The use case to get movies categorized by genre.
+ * @param getMovieUseCase The use case to get the movie.
+ * @param savedStateHandle The saved state handle to hanldle state changes and receiving data from ui.
  *
  * @author Jian James P. Astrero
  */
