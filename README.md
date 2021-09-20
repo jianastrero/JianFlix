@@ -64,3 +64,6 @@ specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;medi
     - Couldn't load my images at first, had to research and found out i had to import more dependencies
 - ViewModel
     - Updating state in concurrent use-case calls. had to call the use-case calls one after the other using invokeOnCompletion
+- Navigation
+    - States on navigation using Dependency Injection on Dagger Hilt is not the same in Koin
+    - You need to pass the bundle from the navigation to the composable screen
