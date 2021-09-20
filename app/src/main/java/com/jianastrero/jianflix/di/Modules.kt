@@ -8,6 +8,7 @@ import com.jianastrero.jianflix.BuildConfig
 import com.jianastrero.jianflix.JianFlixDatabase
 import com.jianastrero.movie_data.local.MovieDao
 import com.jianastrero.movie_data.remote.ITunesApi
+import com.jianastrero.movie_detail.MovieDetailViewModel
 import com.jianastrero.movie_main_list.MovieMainListViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -98,4 +99,5 @@ val networkModule = module {
  */
 val viewModelModules = module {
     viewModel { MovieMainListViewModel(get(), get()) }
+    viewModel { params -> MovieDetailViewModel(get(), params.get()) }
 }
