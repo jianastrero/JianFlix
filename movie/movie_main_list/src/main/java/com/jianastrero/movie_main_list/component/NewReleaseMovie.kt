@@ -53,10 +53,7 @@ fun NewReleaseMovie(
                 }
         ) {
             val painter = rememberImagePainter(
-                data = movie.artwork.iTunesArtworkUrlResize((size.width / 1.6).toInt()),
-                builder = {
-
-                }
+                data = movie.artwork.iTunesArtworkUrlResize((size.width / 1.6).toInt())
             )
             Image(
                 alignment = Alignment.Center,

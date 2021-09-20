@@ -53,10 +53,7 @@ fun MovieItem(
                 .clip(RoundedCornerShape(8.dp))
         ) {
             val painter = rememberImagePainter(
-                data = movie.artwork.iTunesArtworkUrlResize(140.dp.value.toInt()),
-                builder = {
-
-                }
+                data = movie.artwork.iTunesArtworkUrlResize(140.dp.value.toInt())
             )
             Image(
                 alignment = Alignment.Center,

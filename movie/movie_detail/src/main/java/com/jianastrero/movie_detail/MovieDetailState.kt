@@ -14,5 +14,6 @@ import com.jianastrero.movie_domain.model.Movie
  */
 data class MovieDetailState(
     val progressState: ProgressState = ProgressState.Loading,
-    val movie: Movie? = null
+    val movie: Movie? = null,
+    val movies: List<Movie> = listOf()
 )
