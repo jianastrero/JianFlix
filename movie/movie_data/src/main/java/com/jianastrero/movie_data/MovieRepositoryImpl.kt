@@ -1,5 +1,6 @@
 package com.jianastrero.movie_data
 
+import com.jianastrero.constant.NetworkConstants.CACHE_TIMEOUT
 import com.jianastrero.movie_data.local.MovieDao
 import com.jianastrero.movie_data.local.model.toMovie
 import com.jianastrero.movie_data.remote.ITunesApi
@@ -22,6 +23,8 @@ class MovieRepositoryImpl(
     private val movieDao: MovieDao
 ) : MovieRepository {
 
+    private var lastFetch = System.currentTimeMillis()
+
     /**
      * Get All Movie Domains
      *
@@ -29,14 +32,25 @@ class MovieRepositoryImpl(
      */
     override suspend fun getAll(): List<Movie> {
 
-        // Fetch Data From API
-        val movieEntities = iTunesApi
-            .search("star", "au", "movie", "") // Fetch from API
-            .movies // Access MovieDto's
-            .map { it.toMovie() } // Map MovieDto's to MovieEntities
+        if (System.currentTimeMillis() - lastFetch > CACHE_TIMEOUT) {
+            // Fetch Data From API
+            val movieEntities = iTunesApi
+                .search("star", "au", "movie", "") // Fetch from API
+                .movies // Access MovieDto's
+                .map { it.toMovie() } // Map MovieDto's to MovieEntities
 
-        movieDao.clear() // Clear Local Table of Movies
-        movieDao.insertAll(movieEntities) // Insert new data of Movies
+            // Keep "viewed" value of the model
+            val cachedMovies = movieDao.getAll()
+            movieEntities.forEach { movieEntity ->
+                val cachedMovie = cachedMovies.firstOrNull { it.id == movieEntity.id }
+                movieEntity.viewed = cachedMovie?.viewed ?: false
+            }
+
+            movieDao.clear() // Clear Local Table of Movies
+            movieDao.insertAll(movieEntities) // Insert new data of Movies
+
+            lastFetch = System.currentTimeMillis()
+        }
 
         return movieDao
             .getAll() // Get all MovieEntities from Local Database
