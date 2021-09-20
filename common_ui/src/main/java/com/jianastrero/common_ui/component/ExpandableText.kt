@@ -12,11 +12,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import com.jianastrero.common_ui.ui.theme.Magenta500
 
+/**
+ * Expandable text composable to show a long text with read more
+ *
+ * @author Jian James P. Astrero
+ */
 @Composable
 fun ExpandableText(
     text: String,
-    collapsedLines: Int = 3,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    collapsedLines: Int = 3
 ) {
     var expanded by remember { mutableStateOf(false) }
 
