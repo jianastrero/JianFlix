@@ -2,7 +2,7 @@
 A Coding Challenge Submission
 
 ## Timeline
-Started at 16e9ebe7 on 9/18/2021 at 10:58 PM
+Started at 16e9ebe7 on 9/18/2021 at 10:58 PM <br />
 Ended at -
 
 ## Architecture
