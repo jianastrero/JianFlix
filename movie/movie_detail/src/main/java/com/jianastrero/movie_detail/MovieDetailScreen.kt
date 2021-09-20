@@ -76,93 +76,93 @@ fun MovieDetailLoadedScreen(
     viewModel: MovieDetailViewModel
 ) {
     viewModel.state.value.movie?.let { movie ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .background(color = PrimaryDark)
+        Box(
+            contentAlignment = Alignment.TopStart
         ) {
-            item {
-                Box(
-                    contentAlignment = Alignment.TopStart
-                ) {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .background(color = PrimaryDark)
+            ) {
+                item {
                     MovieArtwork(movie = movie)
-                    Icon(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = "Back",
-                        tint = Color.White,
+                    Text(
+                        text = movie.name,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier
-                            .padding(8.dp)
-                            .clickable {
-                                navController.popBackStack()
-                            }
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
+                    )
+                    Text(
+                        text = movie.genre,
+                        color = Color.White.copy(alpha = 0.5f),
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Medium,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
+                    )
+                    Text(
+                        text = "Duration: ${movie.timeInMillis.toReadableHoursMinutesAndSeconds()}",
+                        color = Color.White.copy(alpha = 0.5f),
+                        fontSize = 12.sp,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
+                    )
+                    Text(
+                        text = "Release Date: ${movie.releaseDate.toReadableMonthDayYear()}",
+                        color = Color.White.copy(alpha = 0.5f),
+                        fontSize = 12.sp,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    ExpandableText(
+                        text = movie.description,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = "More like this",
+                        color = Color.White.copy(alpha = 0.6f),
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
                     )
                 }
-                Text(
-                    text = movie.name,
-                    color = Color.White,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                )
-                Text(
-                    text = movie.genre,
-                    color = Color.White.copy(alpha = 0.5f),
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Medium,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                )
-                Text(
-                    text = "Duration: ${movie.timeInMillis.toReadableHoursMinutesAndSeconds()}",
-                    color = Color.White.copy(alpha = 0.5f),
-                    fontSize = 12.sp,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                )
-                Text(
-                    text = "Release Date: ${movie.releaseDate.toReadableMonthDayYear()}",
-                    color = Color.White.copy(alpha = 0.5f),
-                    fontSize = 12.sp,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                ExpandableText(
-                    text = movie.description,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                )
-                Spacer(modifier = Modifier.height(12.dp))
-                Text(
-                    text = "More like this",
-                    color = Color.White.copy(alpha = 0.6f),
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                )
-            }
-            items(viewModel.state.value.movies) { movie ->
-                MovieItem(
-                    movie = movie,
-                    onClick = {
-                        "movie clicked: ${movie.name}".log()
-                        navController.navigate(
-                            Screen.MovieDetailScreen.route + "/${movie.id}"
-                        ) {
-                            popUpTo(Screen.MovieMainListScreen.route)
+                items(viewModel.state.value.movies) { movie ->
+                    MovieItem(
+                        movie = movie,
+                        onClick = {
+                            "movie clicked: ${movie.name}".log()
+                            navController.navigate(
+                                Screen.MovieDetailScreen.route + "/${movie.id}"
+                            ) {
+                                popUpTo(Screen.MovieMainListScreen.route)
+                            }
                         }
-                    }
-                )
+                    )
+                }
             }
+            Icon(
+                imageVector = Icons.Filled.ArrowBack,
+                contentDescription = "Back",
+                tint = Color.White,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .clickable {
+                        navController.popBackStack()
+                    }
+            )
         }
     }
 }
