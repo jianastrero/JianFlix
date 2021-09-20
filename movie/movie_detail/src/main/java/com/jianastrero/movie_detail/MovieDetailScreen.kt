@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import com.jianastrero.common_ui.component.ExpandableText
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
 import com.jianastrero.core.util.toReadableHoursMinutesAndSeconds
+import com.jianastrero.core.util.toReadableMonthDayYear
 import com.jianastrero.movie_detail.component.MovieArtwork
 import com.jianastrero.movie_domain.model.Movie
 import org.koin.androidx.compose.getStateViewModel
@@ -53,6 +54,14 @@ fun MovieDetailScreen(
             )
             Text(
                 text = "Duration: ${movie.timeInMillis.toReadableHoursMinutesAndSeconds()}",
+                color = Color.White.copy(alpha = 0.5f),
+                fontSize = 12.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+            )
+            Text(
+                text = "Release Date: ${movie.releaseDate.toReadableMonthDayYear()}",
                 color = Color.White.copy(alpha = 0.5f),
                 fontSize = 12.sp,
                 modifier = Modifier
