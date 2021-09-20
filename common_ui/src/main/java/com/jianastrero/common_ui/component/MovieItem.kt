@@ -17,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
+import com.jianastrero.common_ui.ui.theme.Amber500
 import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.core.util.toCurrency
 import com.jianastrero.common_ui.ui.theme.Magenta500
@@ -66,16 +67,30 @@ fun MovieItem(
                     .fillMaxHeight(),
                 painter = painter,
             )
-            Text(
-                text = movie.price.toCurrency(movie.currency),
-                textAlign = TextAlign.Center,
-                color = Color.White,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .background(color = Magenta500)
-                    .fillMaxWidth()
-            )
+            Column {
+                if (movie.viewed) {
+                    Text(
+                        text = "VIEWED",
+                        textAlign = TextAlign.Center,
+                        color = Color.White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .background(color = Amber500)
+                            .fillMaxWidth()
+                    )
+                }
+                Text(
+                    text = movie.price.toCurrency(movie.currency),
+                    textAlign = TextAlign.Center,
+                    color = Color.White,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .background(color = Magenta500)
+                        .fillMaxWidth()
+                )
+            }
         }
         Text(
             text = movie.name,
