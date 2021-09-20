@@ -1,8 +1,6 @@
 # JianFlix
 A Coding Challenge Submission
-
-## Sample App
-[Download Link](https://drive.google.com/file/d/17Cz5O0pw00YycxvyU2L6cADP4eEZxyKw/view?usp=sharing)
+[Download From Google Drive](https://drive.google.com/file/d/17Cz5O0pw00YycxvyU2L6cADP4eEZxyKw/view?usp=sharing)
 
 ## Timeline - 41 hours, 57 minutes
 Started on *9/18/2021 at 10:58 PM* <br />
