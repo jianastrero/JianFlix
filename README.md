@@ -46,8 +46,13 @@ specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;medi
         - The Initial idea was a simple list with 2 collumns showing movies that you could scroll to
         - Extended the idea by adding a New Release Movie Portion on the screen
         - Extended the idea by categorizing the movies and using horizontally scrollable movie lists
+        - Show if movie is viewed
     8. Create Movie Detail Screen
-        - TODO
+        - Show details of the movie
+        - Show if movie was viewed or not
+    9. Extend Movie Detail Screen
+        - Suggest movies like the current movie
+        - To show scalability
 
 ## Struggles:
 - General
