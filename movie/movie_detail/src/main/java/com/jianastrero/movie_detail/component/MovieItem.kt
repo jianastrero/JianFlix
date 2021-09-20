@@ -64,7 +64,6 @@ fun MovieItem(
                     brush = Brush.verticalGradient(
                         listOf(
                             Color.Transparent,
-                            PrimaryDark.copy(alpha = 0.1f),
                             PrimaryDark
                         ),
                         startY = 0f,
