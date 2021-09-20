@@ -1,6 +1,7 @@
 package com.jianastrero.movie_main_list.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -14,6 +15,7 @@ import androidx.compose.ui.unit.*
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.jianastrero.common_ui.component.GradientLetterBox
+import com.jianastrero.common_ui.ui.theme.Amber500
 import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.common_ui.ui.theme.Magenta500
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
@@ -29,13 +31,15 @@ import com.jianastrero.movie_domain.model.Movie
 @ExperimentalCoilApi
 @Composable
 fun NewReleaseMovie(
-    movie: Movie
+    movie: Movie,
+    onClick: (Movie) -> Unit = {}
 ) {
     var size by remember { mutableStateOf(IntSize.Zero) }
     Box(
         contentAlignment = Alignment.BottomCenter,
         modifier = Modifier
             .fillMaxWidth()
+            .clickable { onClick(movie) }
     ) {
         GradientLetterBox(
             color = PrimaryDark,
@@ -75,10 +79,25 @@ fun NewReleaseMovie(
                 fontSize = 20.sp,
                 fontWeight = FontWeight.ExtraBold
             )
-            Text(
-                text = "New on JianFlix",
-                color = Magenta500
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start
+            ) {
+                Text(
+                    text = "New on JianFlix",
+                    color = Magenta500,
+                    fontSize = 16.sp
+                )
+                if (movie.viewed) {
+                    Text(
+                        text = "Viewed",
+                        color = Amber500.copy(alpha = 0.6f),
+                        fontSize = 14.sp,
+                        modifier = Modifier
+                            .padding(start = 8.dp)
+                    )
+                }
+            }
         }
     }
 }

@@ -24,6 +24,7 @@ import com.jianastrero.common_ui.ui.theme.Magenta500
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
 import com.jianastrero.core.domain.ProgressState
 import com.jianastrero.core.util.log
+import com.jianastrero.movie_domain.model.Movie
 import com.jianastrero.movie_main_list.component.NewReleaseMovie
 import org.koin.androidx.compose.get
 
@@ -83,7 +84,10 @@ fun MovieMainListLoadedScreen(
 
         viewModel.state.value.latestMovie?.let { latestMovie ->
             item {
-                NewReleaseMovie(movie = latestMovie)
+                NewReleaseMovie(
+                    movie = latestMovie,
+                    onClick = { movie -> showMovieDetail(navController, movie) }
+                )
             }
         }
 
@@ -108,12 +112,7 @@ fun MovieMainListLoadedScreen(
                     }
                     MovieItem(
                         movie = item,
-                        onClick = { movie ->
-                            "movie clicked: ${movie.name}".log()
-                            navController.navigate(
-                                Screen.MovieDetailScreen.route + "/${movie.id}"
-                            )
-                        }
+                        onClick = { movie -> showMovieDetail(navController, movie) }
                     )
                     if (index == movies.size - 1) {
                         Spacer(modifier = Modifier.width(8.dp))
@@ -123,4 +122,11 @@ fun MovieMainListLoadedScreen(
 
         }
     }
+}
+
+private fun showMovieDetail(navController: NavController, movie: Movie) {
+    "movie clicked: ${movie.name}".log()
+    navController.navigate(
+        Screen.MovieDetailScreen.route + "/${movie.id}"
+    )
 }
