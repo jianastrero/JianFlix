@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jianastrero.constant.StateConstants
+import com.jianastrero.core.domain.ProgressState
 import com.jianastrero.core.domain.Resource
 import com.jianastrero.core.util.log
 import com.jianastrero.movie_use_case.GetMovieUseCase
@@ -43,16 +44,21 @@ class MovieDetailViewModel(
             when (resource) {
                 is Resource.Success -> {
                     _state.value = _state.value.copy(
+                        progressState = ProgressState.Loaded,
                         movie = resource.data
                     )
                 }
                 is Resource.Loading -> {
                     _state.value = _state.value.copy(
+                        progressState = ProgressState.Loading,
                         movie = null
                     )
                 }
                 is Resource.Error -> {
                     _state.value = _state.value.copy(
+                        progressState = ProgressState.Error(
+                            resource.message ?: "An unexpected error had occured"
+                        ),
                         movie = null
                     )
                 }
