@@ -24,17 +24,22 @@ specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;medi
 
 ## Steps Done in development
 1. Design Architecture
-  - TODO
+    - TODO
 2. Backend Development
-    1. Create Logging
+    1. Create Logging utility on Core Module
          - TODO
     2. Implement Dependency Injection Starting Point
          - TODO
-    3. Define What Module I needed - Movie
+    3. Define What Modules I needed - Movie
          - TODO
     4. Create Domain for Movie
          - TODO
-    5. 
+    5. Create Data for Movie
+      - TODO
+    6. Create Use-Cases for Movie
+      - TODO
+    7. Create Movie Main List Screen
+      - TODO
 
 ## Struggles:
 - General
