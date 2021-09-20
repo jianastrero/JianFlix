@@ -5,10 +5,11 @@ import org.koin.dsl.module
 
 val movieUseCaseModule = module {
 
+    factory { GetLatestMovieUseCase() }
+    factory { GetMoviesByGenreUseCase() }
+    factory { GetMoviesCategorizedByGenreUseCase() }
     factory { GetMoviesUseCase() }
     factory { GetMovieUseCase() }
-    factory { GetMoviesCategorizedByGenreUseCase() }
-    factory { GetLatestMovieUseCase() }
     factory { SetMovieViewedUseCase() }
 
 }
