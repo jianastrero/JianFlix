@@ -12,6 +12,7 @@ Clean Architecture<br />
 | Image Loading        | Coil                     | https://github.com/coil-kt/coil                              |
 | Data Persistence     | Room Persistence Library | https://developer.android.com/jetpack/androidx/releases/room |
 | Rest API Client      | Retrofit                 | https://square.github.io/retrofit/                           |
+| UI                   | Jetpack Compose          | https://developer.android.com/jetpack/compose                |
 
 ## UI Inspiration
 - [Artstation - Mobile Application Concept](https://www.pinterest.ph/pin/644155552948637809/)
