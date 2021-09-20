@@ -39,6 +39,10 @@ specific url: [https://itunes.apple.com/search?term=star&amp;country=au&amp;medi
     6. Create Use-Cases for Movie
         - TODO
     7. Create Movie Main List Screen
+        - The Initial idea was a simple list with 2 collumns showing movies that you could scroll to
+        - Extended the idea by adding a New Release Movie Portion on the screen
+        - Extended the idea by categorizing the movies and using horizontally scrollable movie lists
+    8. Create Movie Detail Screen
         - TODO
 
 ## Struggles:
