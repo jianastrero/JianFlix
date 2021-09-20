@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.jianastrero.constant.StateConstants
 import com.jianastrero.core.domain.ProgressState
 import com.jianastrero.core.domain.Resource
+import com.jianastrero.core.util.log
 import com.jianastrero.movie_use_case.GetLatestMovieUseCase
 import com.jianastrero.movie_use_case.GetMovieUseCase
 import com.jianastrero.movie_use_case.GetMoviesCategorizedByGenreUseCase

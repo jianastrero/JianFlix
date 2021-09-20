@@ -99,5 +99,5 @@ val networkModule = module {
  */
 val viewModelModules = module {
     viewModel { MovieMainListViewModel(get(), get()) }
-    viewModel { params -> MovieDetailViewModel(get(), params.get()) }
+    viewModel { MovieDetailViewModel(get(), get()) }
 }
