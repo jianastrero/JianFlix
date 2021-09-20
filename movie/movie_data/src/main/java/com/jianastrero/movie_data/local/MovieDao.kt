@@ -3,6 +3,7 @@ package com.jianastrero.movie_data.local
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.jianastrero.movie_data.local.model.MovieEntity
 
 /**
@@ -40,6 +41,16 @@ interface MovieDao {
      */
     @Insert
     suspend fun insertAll(movieEntities: List<MovieEntity>)
+
+    /**
+     * Update Movie
+     *
+     * @param movieEntity Movie to update
+     *
+     * @author Jian James P. Astrero
+     */
+    @Update
+    suspend fun update(movieEntity: MovieEntity)
 
     /**
      * Delete all Movies

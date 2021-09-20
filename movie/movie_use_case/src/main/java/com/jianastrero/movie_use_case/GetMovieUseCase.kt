@@ -16,7 +16,7 @@ import java.lang.Exception
  *
  * @author Jian James P. Astrero
  */
-class GetMovieUseCase : KoinComponent{
+class GetMovieUseCase : KoinComponent {
 
     private val repository by inject<MovieRepository>()
 

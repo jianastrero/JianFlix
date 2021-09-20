@@ -11,31 +11,23 @@ import retrofit2.HttpException
 import java.io.IOException
 import java.lang.Exception
 
-/**
- * Use-case for Getting a single movie
- *
- * @author Jian James P. Astrero
- */
-class GetLatestMovieUseCase : KoinComponent {
+class SetMovieViewedUseCase : KoinComponent {
 
     private val repository by inject<MovieRepository>()
 
     /**
      * Invokable - object could invoke itself to call this method
      */
-    operator fun invoke(): Flow<Resource<Movie>> = flow {
+    operator fun invoke(id: Int): Flow<Resource<Movie>> = flow {
         try {
             emit(Resource.Loading<Movie>())
 
-            val movie = repository.getAll().maxByOrNull { it.releaseDate }
+            val movie = repository.getById(id)
+            movie.viewed = true
 
-            emit (
-                if (movie == null) {
-                    Resource.Error<Movie>("Unexpected error occurred")
-                } else {
-                    Resource.Success(movie)
-                }
-            )
+            val updatedMovie = repository.update(movie)
+
+            emit(Resource.Success(updatedMovie))
 
         } catch (e: HttpException) {
             emit(Resource.Error.UnexpectedError<Movie>())

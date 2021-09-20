@@ -6,12 +6,10 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jianastrero.constant.StateConstants
-import com.jianastrero.core.domain.ProgressState
 import com.jianastrero.core.domain.Resource
 import com.jianastrero.core.util.log
-import com.jianastrero.movie_use_case.GetLatestMovieUseCase
 import com.jianastrero.movie_use_case.GetMovieUseCase
-import com.jianastrero.movie_use_case.GetMoviesCategorizedByGenreUseCase
+import com.jianastrero.movie_use_case.SetMovieViewedUseCase
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
@@ -25,20 +23,23 @@ import kotlinx.coroutines.flow.onEach
  */
 class MovieDetailViewModel(
     private val getMovieUseCase: GetMovieUseCase,
+    private val setMovieViewedUseCase: SetMovieViewedUseCase,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
+    private var _movieId = 0
     private val _state = mutableStateOf(MovieDetailState())
     val state: State<MovieDetailState> = _state
 
     init {
         savedStateHandle.get<Int>(StateConstants.PARAM_MOVIE_ID)?.let { movieId ->
-            getMovie(movieId)
+            _movieId = movieId
         }
+        getMovie()
     }
 
-    private fun getMovie(movieId: Int) {
-        getMovieUseCase(movieId).onEach { resource ->
+    private fun getMovie() {
+        getMovieUseCase(_movieId).onEach { resource ->
             when (resource) {
                 is Resource.Success -> {
                     _state.value = _state.value.copy(
@@ -54,6 +55,26 @@ class MovieDetailViewModel(
                     _state.value = _state.value.copy(
                         movie = null
                     )
+                }
+            }
+        }.launchIn(viewModelScope).invokeOnCompletion {
+            setMovieViewed()
+        }
+    }
+
+    private fun setMovieViewed() {
+        setMovieViewedUseCase(_movieId).onEach { resource ->
+            // Just notify the state has changed, don't need to update the UI to only show viewed
+            // When the user returns to the same movie
+            when (resource) {
+                is Resource.Success -> {
+                    _state.value = _state.value.copy()
+                }
+                is Resource.Loading -> {
+                    _state.value = _state.value.copy()
+                }
+                is Resource.Error -> {
+                    _state.value = _state.value.copy()
                 }
             }
         }.launchIn(viewModelScope)

@@ -47,3 +47,22 @@ fun MovieEntity.toMovie() = Movie(
     timeInMillis = timeInMillis,
     viewed = viewed
 )
+
+/**
+ * Convert a Movie into a MovieEntity Instance
+ *
+ * @author Jian James P. Astrero
+ */
+fun Movie.toMovieEntity() = MovieEntity(
+    artwork = artwork,
+    currency = currency,
+    description = description,
+    genre = genre,
+    id = id,
+    name = name,
+    price = price,
+    preview = preview,
+    releaseDate = releaseDate,
+    timeInMillis = timeInMillis,
+    viewed = viewed
+)

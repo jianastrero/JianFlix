@@ -3,6 +3,7 @@ package com.jianastrero.movie_data
 import com.jianastrero.constant.NetworkConstants.CACHE_TIMEOUT
 import com.jianastrero.movie_data.local.MovieDao
 import com.jianastrero.movie_data.local.model.toMovie
+import com.jianastrero.movie_data.local.model.toMovieEntity
 import com.jianastrero.movie_data.remote.ITunesApi
 import com.jianastrero.movie_data.remote.model.toMovie
 import com.jianastrero.movie_domain.MovieRepository
@@ -68,6 +69,13 @@ class MovieRepositoryImpl(
         movieDao
             .getById(id) // Get MovieEntity by ID
             .toMovie() // Convert MovieEntity to Movie Domain
+
+    override suspend fun update(movie: Movie): Movie {
+        val movieEntity = movie.toMovieEntity()
+        movieDao.update(movieEntity)
+        val updatedMovieEntity = movieDao.getById(movieEntity.id)
+        return updatedMovieEntity.toMovie()
+    }
 
 
 }
