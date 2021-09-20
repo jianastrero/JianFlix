@@ -1,4 +1,4 @@
-package com.jianastrero.movie_details
+package com.jianastrero.movie_detail
 
 import org.junit.Test
 

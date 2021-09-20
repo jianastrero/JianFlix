@@ -1,4 +1,4 @@
-package com.jianastrero.movie_details
+package com.jianastrero.movie_detail
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
