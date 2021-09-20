@@ -34,6 +34,14 @@ import com.jianastrero.movie_detail.component.MovieItem
 import com.jianastrero.movie_domain.model.Movie
 import org.koin.androidx.compose.getStateViewModel
 
+/**
+ * Composable function for Movie Detail Screen
+ *
+ * @param navController The nav controller for the app
+ * @param bundle The bundle for states
+ *
+ * @author Jian James P. Astrero
+ */
 @ExperimentalCoilApi
 @Composable
 fun MovieDetailScreen(

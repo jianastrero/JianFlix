@@ -7,8 +7,8 @@ import com.jianastrero.movie_domain.model.Movie
  * The State for MovieMainList in its ViewModel
  *
  * @param progressState The ProgressState of this State
- * @param moviesCategorizedByGenre Movies categorized by Genre
- * @param latestMovie The latest movie from the list
+ * @param movie Movie
+ * @param movies The list of suggested movies
  *
  * @author Jian James P. Astrero
  */

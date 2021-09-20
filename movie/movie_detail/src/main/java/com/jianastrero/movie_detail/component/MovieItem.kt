@@ -26,6 +26,14 @@ import com.jianastrero.common_ui.ui.theme.PrimaryDark
 import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.movie_domain.model.Movie
 
+/**
+ * Movie Items for suggested movies
+ *
+ * @param movie The movie to show
+ * @param onClick invoked when this composable function is clicked
+ *
+ * @author Jian James P. Astrero
+ */
 @ExperimentalCoilApi
 @Composable
 fun MovieItem(

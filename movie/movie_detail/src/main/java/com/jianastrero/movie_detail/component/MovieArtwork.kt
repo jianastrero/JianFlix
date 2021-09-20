@@ -26,6 +26,13 @@ import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.core.util.toCurrency
 import com.jianastrero.movie_domain.model.Movie
 
+/**
+ * Composable function for Movie Artwork
+ *
+ * @param movie The movie to show the artwork for
+ *
+ * @author Jian James P. Astrero
+ */
 @Composable
 fun MovieArtwork(
     movie: Movie
