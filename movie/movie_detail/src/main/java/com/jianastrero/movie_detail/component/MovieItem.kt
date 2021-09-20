@@ -2,11 +2,15 @@ package com.jianastrero.movie_detail.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -17,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.jianastrero.common_ui.ui.theme.Amber500
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
 import com.jianastrero.core.util.iTunesArtworkUrlResize
 import com.jianastrero.movie_domain.model.Movie
@@ -37,6 +42,7 @@ fun MovieItem(
             .onSizeChanged {
                 size = it
             }
+            .clickable { onClick(movie) }
     ) {
         val painter = rememberImagePainter(
             data = movie.artwork.iTunesArtworkUrlResize((size.width / 1.6).toInt())
@@ -66,13 +72,28 @@ fun MovieItem(
                     )
                 )
         )
-        Text(
-            text = movie.name,
-            color = Color.White,
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Black,
-            modifier = Modifier.
-                    padding(8.dp)
-        )
+        Column(
+            horizontalAlignment = Alignment.Start,
+            verticalArrangement = Arrangement.Bottom,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
+            Text(
+                text = movie.name,
+                color = Color.White,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Black
+            )
+            if (movie.viewed) {
+                Text(
+                    text = "Viewed",
+                    color = Amber500.copy(alpha = 0.7f),
+                    fontSize = 14.sp,
+                    modifier = Modifier
+                        .padding(start = 8.dp)
+                )
+            }
+        }
     }
 }
