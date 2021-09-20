@@ -26,12 +26,21 @@ interface MovieRepository {
     suspend fun getById(id: Int): Movie
 
     /**
-     * Get Movie Domain by ID
+     * Update Movie Domain
      *
      * @param id The id of the Movie to be fetched
      *
      * @author Jian James P. Astrero
      */
     suspend fun update(movie: Movie): Movie
+
+    /**
+     * Get All Movie Domains for Genre
+     *
+     * @param genre The genre of the movies to be fetched
+     *
+     * @author Jian James P. Astrero
+     */
+    suspend fun getMoviesByGenre(genre: String): List<Movie>
 
 }
