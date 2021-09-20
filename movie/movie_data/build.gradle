@@ -40,6 +40,9 @@ dependencies {
     // Import Core
     implementation project(':core')
 
+    // Import Core
+    implementation project(':constant')
+
     // Import Movie Domain
     implementation project(':movie:movie_domain')
 
