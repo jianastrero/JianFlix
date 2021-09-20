@@ -19,7 +19,7 @@ import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import com.jianastrero.common_ui.Screen
 import com.jianastrero.common_ui.component.ErrorPage
-import com.jianastrero.common_ui.component.MovieItem
+import com.jianastrero.movie_main_list.component.MovieItem
 import com.jianastrero.common_ui.ui.theme.Magenta500
 import com.jianastrero.common_ui.ui.theme.PrimaryDark
 import com.jianastrero.core.domain.ProgressState

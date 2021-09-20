@@ -1,4 +1,4 @@
-package com.jianastrero.common_ui.component
+package com.jianastrero.movie_main_list.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
